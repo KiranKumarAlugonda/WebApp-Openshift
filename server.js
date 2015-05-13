@@ -1,5 +1,12 @@
 var express = require('express');
 var app = express();
+var app = require('express')();
+var bodyParser = require('body-parser');
+var multer = require('multer');
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(multer()); // for parsing multipart/form-data
 
 var developer = [
     { firstName: 'Alice', lastName: 'kumar' },
@@ -21,6 +28,11 @@ app.delete('/api/developer/:index', function (req, res) {
     res.json(developer);
 })
 
+app.post('/api/developer', function (req, res) {
+    var newDeveloper = req.body;
+    developer.push(newDeveloper);
+    res.json(developer);
+})
 app.use(express.static(__dirname + '/public'));
 
 //app.get('/', function (req, res) {
