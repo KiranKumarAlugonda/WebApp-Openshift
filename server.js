@@ -1,6 +1,19 @@
 var express = require('express');
 var app = express();
 
+var developer = [
+    { firstName: 'Alice', lastName: 'kumar' },
+
+    { firstName: 'alugonda', lastName: 'kumar' },
+
+    { firstName: 'chris', lastName: 'kumar' },
+
+    { firstName: 'jason', lastName: 'kumar' }
+]
+
+app.get('/api/developer/:index', function (req, res) {
+    res.json(developer[req.params.index]);
+})
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
