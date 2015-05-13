@@ -11,14 +11,21 @@ var developer = [
     { firstName: 'jason', lastName: 'kumar' }
 ]
 
-app.get('/api/developer/:index', function (req, res) {
-    res.json(developer[req.params.index]);
+
+app.get('/api/developer', function (req, res) {
+    res.json(developer);
 })
+
+app.delete('/api/developer/:index', function (req, res) {
+    developer.splice(req.params.index, 1);
+    res.json(developer);
+})
+
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+//app.get('/', function (req, res) {
+//    res.send('Hello World!');
+//});
 
 //var server = app.listen(3000, function () {
 

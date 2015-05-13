@@ -5,11 +5,19 @@
 <script src="app.js"></script>
 <body ng-app="IdeApp">
     <div class="container" ng-controller="IdeController">
-        {{hello}}
+        <table class="table table-striped">
+            <tbody>
+            <tr ng-repeat="developer in developers">
+            <td>{{developer.firstName}}</td>
+             <td>{{developer.lastName}}</td>
+                <td>
+                    <button class="btn btn-danger pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
+            </tr>
+                
+        </table>
     </div>
-  
-
- 
-
 </body>
 </html>
