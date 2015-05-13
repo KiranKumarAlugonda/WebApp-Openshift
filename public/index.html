@@ -6,7 +6,24 @@
 <body ng-app="IdeApp">
     <div class="container" ng-controller="IdeController">
         <table class="table table-striped">
-            <tbody>
+           <thead>
+               <tr>
+                   <th>
+                       <input ng-model="dev.firstName" class="form-control"/>
+
+                   </th>
+                   <th>
+                       <input ng-model="dev.lastName"class="form-control"/>
+                   </th>
+                   <th>
+                       <button ng-click="add(dev)" class="btn btn-green pull-right">
+                           <span class="glyphicon glyphicon-plus"></span>
+                       </button>
+                   </th>
+               </tr>
+
+           </thead>
+             <tbody>
             <tr ng-repeat="developer in developers">
             <td>{{developer.firstName}}</td>
              <td>{{developer.lastName}}</td>
