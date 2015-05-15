@@ -9,13 +9,29 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use(multer()); // for parsing multipart/form-data
 
 var developer = [
-    { firstName: 'Alice', lastName: 'kumar' },
+    {
+        firstName: 'Alice', lastName: 'kumar', apps: [
+            {name : 'Word'},{name : 'PowerPoint'},{name:'Excel'}
+        ]
+    },
 
-    { firstName: 'alugonda', lastName: 'kumar' },
+    {
+        firstName: 'alugonda', lastName: 'kumar', apps: [
+              { name: 'Word' }, { name: 'PowerPoint' }, { name: 'Excel' }
+        ]
+    },
 
-    { firstName: 'chris', lastName: 'kumar' },
+    {
+        firstName: 'chris', lastName: 'kumar', apps: [
+              { name: 'Word' }, { name: 'PowerPoint' }, { name: 'Excel' }
+        ]
+    },
 
-    { firstName: 'jason', lastName: 'kumar' }
+    {
+        firstName: 'jason', lastName: 'kumar', apps: [
+              { name: 'Word' }, { name: 'PowerPoint' }, { name: 'Excel' }
+        ]
+    }
 ]
 
 
